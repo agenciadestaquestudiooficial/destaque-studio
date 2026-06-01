@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destaque Studio</title>
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#111111;
+      --gold:#d4af37;
+      --gold2:#ffd86b;
+      --text:#f5f5f5;
+      --muted:#b9b9b9;
+      --line:rgba(212,175,55,.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,.12), transparent 35%),
+        linear-gradient(180deg, #050505, #0a0a0a 55%, #050505);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:40px 0;
+      text-align:center;
+    }
+    .hero{
+      width:100%;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border-radius:28px;
+      padding:42px 20px;
+      box-shadow:0 0 60px rgba(0,0,0,.45);
+    }
+    .logo{
+      width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 18px;
+      border-radius:24px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      padding:14px;
+    }
+    .brand{
+      font-size:clamp(2.4rem,7vw,5rem);
+      font-weight:800;
+      letter-spacing:2px;
+      color:var(--gold);
+      text-shadow:0 0 18px rgba(212,175,55,.22);
+    }
+    .tagline{
+      margin-top:12px;
+      font-size:clamp(1.05rem,3vw,1.5rem);
+      color:var(--gold2);
+      font-style:italic;
+    }
+    .subtitle{
+      max-width:720px;margin:18px auto 0;color:var(--muted);font-size:1.03rem;
+    }
+    .buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      padding:14px 22px;border-radius:999px;font-weight:700;
+      border:1px solid var(--line);background:rgba(255,255,255,.03);
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;border:none}
+    section{padding:70px 0}
+    .section-title{
+      text-align:center;margin-bottom:26px;font-size:2rem;color:var(--gold2);letter-spacing:1px
+    }
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
+    }
+    .card{
+      background:rgba(17,17,17,.9);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      min-height:150px;
+    }
+    .card h3{color:var(--gold2);margin-bottom:8px}
+    .muted{color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+    .stat{
+      text-align:center;background:rgba(17,17,17,.9);
+      border:1px solid var(--line);border-radius:22px;padding:18px 10px;
+    }
+    .stat strong{display:block;font-size:2rem;color:var(--gold2)}
+    .portfolio{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;
+    }
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border:1px solid var(--line);border-radius:18px;padding:16px;min-height:120px
+    }
+    .project span{display:block;color:var(--gold2);font-weight:700;margin-bottom:6px}
+    .contact{
+      text-align:center;background:rgba(17,17,17,.9);
+      border:1px solid var(--line);border-radius:24px;padding:28px 18px;
+    }
+    footer{padding:24px 0 40px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <img class="logo" src="logo.png" alt="Logo Destaque Studio">
+      <div class="brand">DESTAQUE STUDIO</div>
+      <div class="tagline">Sua ideia ganha vida.</div>
+      <p class="subtitle">
+        Criamos identidade visual, artes, logos, banners e sites com visual premium,
+        atenção aos detalhes e foco em fazer sua marca se destacar.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="https://wa.me/554899120499" target="_blank">Solicitar Orçamento</a>
+        <a class="btn" href="#servicos">Ver Serviços</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="servicos">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="grid">
+        <div class="card"><h3>Logotipos</h3><p class="muted">Criação de marcas modernas, luxuosas e memoráveis.</p></div>
+        <div class="card"><h3>Artes para Instagram</h3><p class="muted">Posts chamativos para divulgar e vender mais.</p></div>
+        <div class="card"><h3>Banners</h3><p class="muted">Materiais visuais para promoções, eventos e anúncios.</p></div>
+        <div class="card"><h3>Identidade Visual</h3><p class="muted">Paleta, estilo e presença profissional para sua marca.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Resultados</h2>
+      <div class="stats">
+        <div class="stat"><strong>50+</strong><span class="muted">Projetos</span></div>
+        <div class="stat"><strong>20+</strong><span class="muted">Artes</span></div>
+        <div class="stat"><strong>10+</strong><span class="muted">Clientes</span></div>
+        <div class="stat"><strong>24h</strong><span class="muted">Resposta</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Portfólio</h2>
+      <div class="portfolio">
+        <div class="project"><span>01</span>Logo Destaque Studio</div>
+        <div class="project"><span>02</span>Logo Barbearia Elite</div>
+        <div class="project"><span>03</span>Logo Pizzaria Imperial</div>
+        <div class="project"><span>04</span>Arte Instagram Premium</div>
+        <div class="project"><span>05</span>Banner de Promoção</div>
+        <div class="project"><span>06</span>Identidade Visual Completa</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container contact">
+      <h2 class="section-title" style="margin-bottom:10px;">Contato</h2>
+      <p><strong>WhatsApp:</strong> +55 48 99120-499</p>
+      <p><strong>Instagram:</strong> @destaque.0ficial</p>
+      <p class="muted" style="margin-top:10px;">Destaque Studio — sua marca com presença premium.</p>
+      <div class="buttons" style="margin-top:22px;">
+        <a class="btn primary" href="https://wa.me/554899120499" target="_blank">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Destaque Studio. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
