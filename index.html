@@ -553,8 +553,7 @@ observer.observe(el);
   if(!localStorage.getItem('introShown')){
 
 setTimeout(()=>{
-document.getElementById('intro-screen')
-.classList.add('hide-intro');
+document.getElementById('intro-screen').style.display='none';
 
 localStorage.setItem('introShown','true');
 
