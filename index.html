@@ -1,1 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Destaque Studio</title>
+
+<style>
+
+:root{
+--bg:#070707;
+--card:#111111;
+--gold:#d4af37;
+--gold2:#ffd86b;
+--text:#f5f5f5;
+--muted:#b9b9b9;
+--line:rgba(212,175,55,.25);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top,#1a1a1a 0%,#070707 55%);
+font-family:Arial,sans-serif;
+color:var(--text);
+overflow-x:hidden;
+animation:fadeSite 1.2s ease;
+}
+
+.container{
+width:min(1150px,92%);
+margin:auto;
+}
+
+header{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px 0;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero img{
+width:320px;
+max-width:90%;
+border-radius:30px;
+box-shadow:
+0 0 60px rgba(212,175,55,.25);
+animation:logoFloat 5s ease-in-out infinite;
+}
+
+.premium-badge{
+margin-top:25px;
+font-size:14px;
+letter-spacing:3px;
+font-weight:700;
+color:var(--gold2);
+}
+
+.tagline{
+font-size:clamp(42px,7vw,78px);
+font-weight:900;
+line-height:1;
+margin-top:25px;
+background:linear-gradient(
+90deg,
+#fff,
+#ffd86b,
+#fff
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+max-width:850px;
+margin:30px auto;
+font-size:22px;
+line-height:1.8;
+color:var(--muted);
+}
+
+.buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.btn{
+padding:16px 34px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+transition:.4s;
+}
+
+.btn-primary{
+background:linear-gradient(
+135deg,
+var(--gold),
+var(--gold2)
+);
+color:#000;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 40px rgba(212,175,55,.4);
+}
+
+.btn{
+border:1px solid var(--line);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+section{
+padding:120px 0;
+}
+
+.section-title{
+font-size:48px;
+text-align:center;
+margin-bottom:60px;
+color:var(--gold2);
+}
+  .grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+padding:35px;
+border-radius:25px;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(212,175,55,.15);
+}
+
+.card h3{
+color:var(--gold2);
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.8;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.stat{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+padding:40px;
+text-align:center;
+border-radius:25px;
+}
+
+.stat strong{
+font-size:50px;
+display:block;
+color:var(--gold2);
+margin-bottom:10px;
+}
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.portfolio img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+border:1px solid var(--line);
+}
+
+.portfolio img:hover{
+transform:scale(1.05);
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:var(--muted);
+border-top:1px solid var(--line);
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+color:black;
+font-weight:bold;
+z-index:9999;
+box-shadow:0 0 30px rgba(212,175,55,.4);
+}
+
+header,
+section,
+.card,
+.stat,
+.portfolio img{
+opacity:0;
+transform:translateY(60px);
+transition:1s cubic-bezier(.22,1,.36,1);
+}
+
+.show{
+opacity:1 !important;
+transform:translateY(0) !important;
+}
+
+@keyframes logoFloat{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeSite{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container hero">
+  <img src="1E1550C9-4DE0-4174-B474-67B0E0C58" alt="Destaque Studio">
+
+<div class="premium-badge">
+🏆 AGÊNCIA CRIATIVA PREMIUM
+</div>
+
+<div class="tagline">
+Design Premium que transforma marcas em autoridade.
+</div>
+
+<p class="subtitle">
+Criamos identidades visuais, logotipos, artes para redes sociais, banners e soluções criativas para empresas que desejam crescer com profissionalismo.
+</p>
+
+<div class="buttons">
+<a class="btn btn-primary" href="#contato">Solicitar Orçamento</a>
+<a class="btn" href="#servicos">Ver Serviços</a>
+</div>
+
+</div>
+</header>
+
+<section id="servicos">
+<div class="container">
+
+<h2 class="section-title">
+Nossos Serviços
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Logotipos</h3>
+<p>Criação de marcas modernas, luxuosas e memoráveis.</p>
+</div>
+
+<div class="card">
+<h3>Artes para Instagram</h3>
+<p>Posts profissionais para gerar autoridade e engajamento.</p>
+</div>
+
+<div class="card">
+<h3>Banners</h3>
+<p>Materiais publicitários de alto impacto visual.</p>
+</div>
+
+<div class="card">
+<h3>Identidade Visual</h3>
+<p>Padronização completa para fortalecer sua empresa.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">
+Resultados
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<strong>50+</strong>
+Projetos Entregues
+</div>
+
+<div class="stat">
+<strong>20+</strong>
+Clientes Atendidos
+</div>
+
+<div class="stat">
+<strong>10+</strong>
+Marcas Criadas
+</div>
+
+<div class="stat">
+<strong>24h</strong>
+Suporte Rápido
+</div>
+
+</div>
+
+</div>
+</section>
+  <section>
+<div class="container">
+
+<h2 class="section-title">
+Portfólio
+</h2>
+
+<div class="portfolio">
+
+<img src="1650B82A-2E8C-4CE0-9A14-F7368D7A6DCE.png">
+<img src="1E1550C9-4DE0-4174-B474-67B0E0C585DF.png">
+<img src="3725FCD8-705D-43C2-8064-0BEB594C2642.png">
+<img src="399355BD-7E9E-4690-8C6D-947BE43F3323.png">
+<img src="4CAEDBB7-5A4B-469F-8D14-25D4A1AC1385.png">
+<img src="62E8B8F7-B128-497B-9070-2F0EACDEBE15.png">
+<img src="70D32F68-AB7B-4F17-A991-521F3DD972B1.png">
+<img src="7C8F56EB-3420-4230-8155-7896F330DDF4.png">
+<img src="C157FB3D-4B47-4F61-ACFC-9C619E2C82B4.png">
+<img src="CDE1A8D9-D6F6-43AE-9729-460B35517BD0.png">
+<img src="CFB226B2-DDFE-40BF-8B8A-9DAE390E09CE.png">
+<img src="E36D1BE4-D316-45A5-9224-7988BC766233.png">
+<img src="E83FDE75-59D1-4876-813D-D084FD401117.png">
+<img src="EC57C6B7-86F2-438B-9CFA-3E7BE7DE3B52.png">
+<img src="F5EC2159-31EB-432E-A4F6-BE5F13404D87.png">
+
+</div>
+
+</div>
+</section>
+
+<section id="contato">
+<div class="container contact">
+
+<h2 class="section-title">
+Contato
+</h2>
+
+<p>
+<strong>WhatsApp:</strong> +55 48 99812-0499
+</p>
+
+<p>
+<strong>Instagram:</strong> @destaque.0ficial
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-primary"
+href="https://wa.me/5548998120499"
+target="_blank">
+🚀 SOLICITAR PROJETO PREMIUM
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Destaque Studio. Todos os direitos reservados.
+</footer>
+
+<a
+class="whatsapp-float"
+href="https://wa.me/5548998120499"
+target="_blank">
+💬
+</a>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll(
+'header,section,.card,.stat,.portfolio img'
+).forEach((el)=>{
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
