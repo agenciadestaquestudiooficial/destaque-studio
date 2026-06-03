@@ -14,7 +14,13 @@
       --muted:#b9b9b9;
       --line:rgba(212,175,55,.25);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
+    <script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+
     body{
       font-family:Arial, Helvetica, sans-serif;
       background:
@@ -293,5 +299,35 @@ Design Premium que transforma marcas em autoridade.
   <footer>
     © 2026 Destaque Studio. Todos os direitos reservados.
   </footer>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('section,.card,.project').forEach((el)=>{
+  observer.observe(el);
+});
+</script>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
