@@ -549,6 +549,22 @@ document.querySelectorAll(
 ).forEach((el)=>{
 observer.observe(el);
 });
+  if(!localStorage.getItem('introShown')){
+
+setTimeout(()=>{
+document.getElementById('intro-screen')
+.classList.add('hide-intro');
+
+localStorage.setItem('introShown','true');
+
+},3500);
+
+}else{
+
+document.getElementById('intro-screen')
+.style.display='none';
+
+}
 </script>
 
 </body>
