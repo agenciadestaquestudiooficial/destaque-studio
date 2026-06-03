@@ -275,12 +275,67 @@ to{
 opacity:1;
 }
 }
+#intro-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+transition:opacity 1s ease;
+}
 
+.intro-content{
+text-align:center;
+}
+
+.intro-content img{
+width:220px;
+animation:logoIntro 2s ease;
+}
+
+.intro-content h1{
+color:#ffd86b;
+margin-top:20px;
+font-size:32px;
+letter-spacing:4px;
+}
+
+.intro-content p{
+color:white;
+margin-top:10px;
+}
+
+.hide-intro{
+opacity:0;
+pointer-events:none;
+}
+
+@keyframes logoIntro{
+0%{
+transform:scale(.5);
+opacity:0;
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
 </style>
 </head>
 
 <body>
-
+<div id="intro-screen">
+  <div class="intro-content">
+    <img src="A5F7A55E-2F5F-45D3-B0DE-E1EA5F27851C.png" alt="DS">
+    <h1>DESTAQUE STUDIO</h1>
+    <p>Transformando ideias em resultados.</p>
+  </div>
+</div>
 <header>
 <div class="container hero">
   <img src="1E1550C9-4DE0-4174-B474-67B0E0C585DF.png" alt="Destaque Studio">
