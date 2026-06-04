@@ -225,18 +225,39 @@ margin-top:40px;
 .portfolio{
 grid-template-columns:repeat(2,1fr);
 }
-
 .portfolio img{
 width:100%;
 height:auto;
 border-radius:25px;
 padding:3px;
 display:block;
-}
 
-.portfolio img:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 35px rgba(212,175,55,.35);
+background:linear-gradient(135deg,#d4af37,#ffd700);
+
+box-shadow:
+0 0 15px rgba(212,175,55,.35),
+0 0 35px rgba(212,175,55,.20),
+0 0 60px rgba(212,175,55,.10);
+
+transition:.5s;
+cursor:pointer;
+}
+  .portfolio img:hover{
+transform:translateY(-8px);
+box-shadow:
+0 0 25px rgba(212,175,55,.50),
+0 0 50px rgba(212,175,55,.30),
+0 0 80px rgba(212,175,55,.15);
+}
+.p
+background:linear-gradient(135deg,#d4af37,#ffd700);
+
+box-shadow:
+0 0 15px rgba(212,175,55,.35),
+0 0 35px rgba(212,175,55,.20),
+0 0 60px rgba(212,175,55,.10);
+
+transition:.5s;
 }
 .reviews{
 display:grid;
