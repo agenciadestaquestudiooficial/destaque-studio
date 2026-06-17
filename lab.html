@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destaque LAB | Destaque Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:#fff;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#d4af37 0%,transparent 70%);
+top:-250px;
+right:-250px;
+opacity:.15;
+pointer-events:none;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#d4af37 0%,transparent 70%);
+bottom:-250px;
+left:-250px;
+opacity:.10;
+pointer-events:none;
+}
+
+section{
+padding:100px 8%;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+}
+
+.badge{
+padding:10px 20px;
+border:1px solid rgba(212,175,55,.4);
+border-radius:999px;
+color:#d4af37;
+font-size:14px;
+margin-bottom:25px;
+backdrop-filter:blur(10px);
+}
+
+.hero h1{
+font-size:clamp(3rem,7vw,6rem);
+line-height:1.1;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.hero p{
+max-width:750px;
+font-size:1.15rem;
+color:#bdbdbd;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:16px 35px;
+background:#d4af37;
+color:#000;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#a5a5a5;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(212,175,55,.15);
+padding:35px;
+border-radius:24px;
+transition:.4s;
+backdrop-filter:blur(20px);
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+box-shadow:0 0 35px rgba(212,175,55,.15);
+}
+
+.card h3{
+margin-top:15px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#b8b8b8;
+}
+
+.icon{
+font-size:2rem;
+}
+
+.quiz{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.03);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(212,175,55,.15);
+}
+
+.quiz h3{
+margin-bottom:25px;
+}
+
+.question{
+margin-bottom:20px;
+}
+
+.question label{
+display:block;
+margin:12px 0;
+cursor:pointer;
+}
+
+.quiz button{
+margin-top:20px;
+background:#d4af37;
+border:none;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+.resultado{
+margin-top:25px;
+font-size:1.2rem;
+color:#d4af37;
+font-weight:700;
+}
+
+.timeline{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.step{
+width:220px;
+padding:25px;
+background:rgba(255,255,255,.03);
+border-radius:20px;
+border:1px solid rgba(212,175,55,.15);
+text-align:center;
+}
+
+.step span{
+display:block;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.future{
+background:linear-gradient(180deg,#050505,#0b0b0b);
+}
+
+.footer{
+text-align:center;
+padding:60px 20px;
+border-top:1px solid rgba(255,255,255,.08);
+color:#9e9e9e;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="badge">
+🧪 DESTAQUE LAB
+</div>
+
+<h1>
+O futuro da sua <span class="gold">marca</span>
+começa aqui.
+</h1>
+
+<p>
+Bem-vindo ao laboratório da Destaque Studio.
+Explore diagnósticos, estratégias e experiências criadas para empresas que querem crescer de verdade.
+</p>
+
+<a href="#missoes" class="btn">
+Entrar no LAB
+</a>
+
+</section>
+
+<section id="missoes" class="reveal">
+
+<h2 class="section-title">
+🎯 Escolha Sua Missão
+</h2>
+
+<p class="section-subtitle">
+Selecione seu principal objetivo.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Conseguir Clientes</h3>
+<p>Aumente sua presença digital e gere novas oportunidades.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Criar um Site</h3>
+<p>Transforme visitantes em clientes com um site profissional.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Criar uma Marca</h3>
+<p>Desenvolva uma identidade forte e memorável.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Crescer nas Redes</h3>
+<p>Melhore alcance, autoridade e engajamento.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="section-title">
+🧠 Diagnóstico Digital
+</h2>
+
+<p class="section-subtitle">
+Descubra o nível da sua presença online.
+</p>
+
+<div class="quiz">
+
+<h3>Responda rapidamente:</h3>
+
+<div class="question">
+<label><input type="checkbox" id="q1"> Minha empresa possui site</label>
+<label><input type="checkbox" id="q2"> Tenho identidade visual profissional</label>
+<label><input type="checkbox" id="q3"> Publico conteúdo regularmente</label>
+<label><input type="checkbox" id="q4"> Invisto em marketing digital</label>
+<label><input type="checkbox" id="q5"> Tenho presença forte nas redes sociais</label>
+</div>
+
+<button onclick="calcularScore()">
+Ver Resultado
+</button>
+
+<div id="resultado" class="resultado"></div>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="section-title">
+🚀 Evolução da Empresa
+</h2>
+
+<p class="section-subtitle">
+Veja a transformação de uma marca.
+</p>
+
+<div class="timeline">
+
+<div class="step">
+<span>1️⃣</span>
+Sem estratégia digital
+</div>
+
+<div class="step">
+<span>2️⃣</span>
+Nova identidade visual
+</div>
+
+<div class="step">
+<span>3️⃣</span>
+Site profissional
+</div>
+
+<div class="step">
+<span>4️⃣</span>
+Mais autoridade
+</div>
+
+<div class="step">
+<span>5️⃣</span>
+Mais clientes
+</div>
+
+</div>
+
+</section>
+
+<section class="future reveal">
+
+<h2 class="section-title">
+🔬 Em Desenvolvimento
+</h2>
+
+<p class="section-subtitle">
+As próximas ferramentas do Destaque LAB.
+</p>
+
+<div class="grid">
+
+<div class="card">
+🤖 Assistente IA
+</div>
+
+<div class="card">
+📱 Analisador de Instagram
+</div>
+
+<div class="card">
+🎨 Gerador de Identidade Visual
+</div>
+
+<div class="card">
+📊 Simulador de Crescimento
+</div>
+
+<div class="card">
+🌎 Análise de Presença Digital
+</div>
+
+<div class="card">
+⚡ Ferramentas Exclusivas
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h2 style="color:#d4af37;margin-bottom:15px;">
+Destaque LAB
+</h2>
+
+<p>
+Uma experiência criada pela Destaque Studio.
+</p>
+
+</footer>
+
+<script>
+
+function calcularScore(){
+
+let pontos = 0;
+
+if(document.getElementById("q1").checked) pontos++;
+if(document.getElementById("q2").checked) pontos++;
+if(document.getElementById("q3").checked) pontos++;
+if(document.getElementById("q4").checked) pontos++;
+if(document.getElementById("q5").checked) pontos++;
+
+let porcentagem = pontos * 20;
+
+document.getElementById("resultado").innerHTML =
+"Sua presença digital atual é de " +
+porcentagem +
+"%. Continue evoluindo sua marca.";
+
+}
+
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll',()=>{
+
+reveals.forEach(item=>{
+
+const top = item.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+item.classList.add('active');
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
